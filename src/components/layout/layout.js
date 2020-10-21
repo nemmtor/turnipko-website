@@ -1,45 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import 'normalize.css';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+import Footer from '../footer/footer';
+import Header from '../header/header';
 
+const Layout = ({ children, headingText, subHeading, ctaText, ctaUrl }) => {
   return (
     <>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <Header
+        headingText={headingText}
+        subHeading={subHeading}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
+      />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  headingText: PropTypes.string.isRequired,
+  subHeading: PropTypes.string.isRequired,
+  ctaText: PropTypes.string.isRequired,
+  ctaUrl: PropTypes.string.isRequired,
 };
 
 export default Layout;

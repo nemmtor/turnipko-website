@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+  font-size: 1.6rem;
+  color: $dark;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.subHeading {
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}

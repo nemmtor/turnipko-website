@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  font-size: 1.6rem;
+  color: $dark;
+  background: $secondary;
+  padding: $spacing-small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    display: block;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}
