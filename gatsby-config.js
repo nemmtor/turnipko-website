@@ -5,6 +5,15 @@ module.exports = {
     author: `Kacper Witas`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'TURNIPKO',
+        fieldName: 'turnipko',
+        url:
+          'https://api-eu-central-1.graphcms.com/v2/ckgjegi0ymgjc01z4dt3uey77/master',
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

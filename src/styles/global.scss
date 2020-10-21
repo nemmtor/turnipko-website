@@ -24,3 +24,13 @@ body {
   outline: none;
   border: 1px solid $dark;
 }
+
+.section {
+  padding: $spacing-small;
+  font-size: 1.6rem;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-small;
+  }
+}
