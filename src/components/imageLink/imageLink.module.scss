@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.imageLink {
+  width: 28rem;
+  height: 18rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  margin-bottom: $spacing-small;
+
+  span {
+    font-size: 2em;
+  }
+}

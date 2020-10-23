@@ -1,14 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Nav from '../components/nav/nav';
 import Gallery from '../components/gallery/gallery';
+import getImageDataFromQuery from '../utils/getImageDataFromQuery';
 
 const IndexPage = ({ data }) => {
-  const last3Images = data.turnipko.images;
-  const images = last3Images.map(img => img.img.url);
+  const images = data.turnipko.images.map(img => getImageDataFromQuery(img));
 
   return (
     <Layout
@@ -18,10 +17,23 @@ const IndexPage = ({ data }) => {
       ctaUrl="/contact"
     >
       <SEO title="Home" />
-      <Nav />
       <section className="section">
         <h2 className="section__title">Last images</h2>
         <Gallery images={images} />
+        <div className="flex-center-column">
+          <p>Wanna see more?</p>
+          <Link
+            to="/portfolio"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              fontWeight: 'bold',
+              padding: '1rem',
+            }}
+          >
+            Checkout gallery
+          </Link>
+        </div>
       </section>
     </Layout>
   );
@@ -32,6 +44,8 @@ export const query = graphql`
     turnipko {
       images(orderBy: createdAt_DESC, first: 3) {
         createdAt
+        id
+        description
         img {
           url
         }

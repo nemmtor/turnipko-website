@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import './variables.scss';
+@import './common/paddings.scss';
+@import './common/other.scss';
 
 *,
 *::before,
@@ -26,7 +28,7 @@ body {
 }
 
 .section {
-  padding: $spacing-small;
+  @extend .padding-small;
   font-size: 1.6rem;
 
   &__title {

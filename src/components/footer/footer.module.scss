@@ -1,10 +1,11 @@
 @import '../../styles/variables.scss';
+@import '../../styles/common/paddings.scss';
 
 .footer {
+  @extend .padding-small;
   font-size: 1.6rem;
   color: $dark;
   background: $secondary;
-  padding: $spacing-small;
   display: flex;
   align-items: center;
   justify-content: center;
