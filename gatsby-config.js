@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-source-graphcms',
+      options: {
+        endpoint:
+          'https://api-eu-central-1.graphcms.com/v2/ckgjegi0ymgjc01z4dt3uey77/master',
+        downloadLocalImages: true,
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: 'TURNIPKO',

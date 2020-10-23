@@ -1,0 +1,21 @@
+fragment Image on Image {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  img {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  category {
+    ... on ImageCategory {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  description
+}

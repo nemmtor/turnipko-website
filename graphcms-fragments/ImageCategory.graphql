@@ -1,0 +1,14 @@
+fragment ImageCategory on ImageCategory {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  name
+  image {
+    ... on Image {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}

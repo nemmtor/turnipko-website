@@ -4,10 +4,13 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Gallery from '../components/gallery/gallery';
-import getImageDataFromQuery from '../utils/getImageDataFromQuery';
+// import getImageDataFromQuery from '../utils/getImageDataFromQuery';
 
 const IndexPage = ({ data }) => {
-  const images = data.turnipko.images.map(img => getImageDataFromQuery(img));
+  const images = data.allGraphCmsImage.nodes.map(({ description, id, img }) => {
+    const { fixed } = img.localFile.childImageSharp;
+    return { description, id, fixed };
+  });
 
   return (
     <Layout
@@ -40,14 +43,21 @@ const IndexPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query Last3Images {
-    turnipko {
-      images(orderBy: createdAt_DESC, first: 3) {
+  query getTop3Images {
+    allGraphCmsImage(limit: 3, sort: { fields: createdAt, order: DESC }) {
+      nodes {
         createdAt
-        id
         description
+        id
         img {
-          url
+          localFile {
+            relativePath
+            childImageSharp {
+              fixed(width: 280) {
+                ...GatsbyImageSharpFixed_withWebp
+              }
+            }
+          }
         }
       }
     }

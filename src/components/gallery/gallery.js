@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 import styles from './gallery.module.scss';
 
 const Gallery = ({ images }) => (
   <div className={styles.gallery}>
-    {images.map(({ url, id, description }) => (
-      <img src={url} key={id} alt={description} className={styles.image} />
+    {images.map(({ fixed, id, description }) => (
+      <Img fixed={fixed} key={id} alt={description} className={styles.image} />
     ))}
   </div>
 );
@@ -14,7 +15,7 @@ const Gallery = ({ images }) => (
 Gallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string.isRequired,
+      fixed: PropTypes.shape({}).isRequired,
       id: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
     }),
