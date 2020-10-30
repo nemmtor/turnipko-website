@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Gallery from '../components/gallery/gallery';
-// import getImageDataFromQuery from '../utils/getImageDataFromQuery';
 
 const IndexPage = ({ data }) => {
   const images = data.allGraphCmsImage.nodes.map(({ description, id, img }) => {
