@@ -6,17 +6,19 @@ import CustomImg from '../customImg/customImg';
 
 const Gallery = ({ images }) => (
   <div className={styles.gallery}>
-    {images.map(({ fluid, id, description }) => (
-      <CustomImg fluid={fluid} key={id} description={description} />
+    {images.map((image) => (
+      <CustomImg image={image} key={image.id} />
     ))}
   </div>);
 
 Gallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
-    fluid: PropTypes.shape({}).isRequired,
+    fluidMobile: PropTypes.shape({}).isRequired,
+    fluidDesktop: PropTypes.shape({}).isRequired,
     id: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired),
 };
+
 
 export default Gallery;

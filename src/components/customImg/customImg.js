@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 import styles from './customImg.module.scss';
 
-const CustomImg = ({ fluid, description }) => {
+const CustomImg = ({ image }) => {
+  const { fluidMobile, fluidDesktop, description } = image;
+  // TODO: Probably needs to lift isfullscreen state up to gallery
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const handleClick = () => {
@@ -17,19 +19,35 @@ const CustomImg = ({ fluid, description }) => {
       setIsFullScreen(prevState => !prevState);
     }
   };
-  // TODO: Probably needs to lift isfullscreen state up to gallery
+
+
+  const sources = [
+    fluidMobile,
+    {
+      ...fluidDesktop,
+      media: `(min-width: 768px)`,
+    },
+  ];
+
+
   return (
     <div onClick={handleClick} onKeyDown={handleKeyDown} role="button" tabIndex={0}
          className={`${styles.container} ${isFullScreen ? styles.full : ''}`}>
-      <Img fluid={fluid} fadeIn={true} alt={description}
+      <Img fluid={sources} fadeIn={true} alt={description}
            className={`${styles.image} ${isFullScreen ? styles.imageFull : ''}`} />
     </div>
   );
 };
 
+
 CustomImg.propTypes = {
-  fluid: PropTypes.shape({}).isRequired,
-  description: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    fluidMobile: PropTypes.shape({}).isRequired,
+    fluidDesktop: PropTypes.shape({}).isRequired,
+    id: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
 };
+
 
 export default CustomImg;

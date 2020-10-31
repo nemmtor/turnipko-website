@@ -7,10 +7,10 @@ import Gallery from '../components/gallery/gallery';
 import getImagesFromQuery from '../utils/getImagesFromQuery';
 
 const IndexPage = () => {
-  const { allGraphCmsImage } = useStaticQuery(
+  const queryResult = useStaticQuery(
     graphql`
         query {
-            allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
+            mobile: allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
                 nodes {
                     createdAt
                     description
@@ -18,7 +18,21 @@ const IndexPage = () => {
                     img {
                         localFile {
                             childImageSharp {
-                                fluid(maxWidth: 1920, quality: 100, webpQuality: 100) {
+                                fluid(maxWidth: 1000, quality: 100) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            desktop: allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
+                nodes {
+                    id
+                    img {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 2000, quality: 100) {
                                     ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
@@ -30,7 +44,7 @@ const IndexPage = () => {
     `,
   );
 
-  const images = getImagesFromQuery(allGraphCmsImage);
+  const images = getImagesFromQuery(queryResult);
 
   return (
     <Layout

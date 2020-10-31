@@ -8,6 +8,7 @@
   outline: none;
   position: relative;
   border: none;
+  cursor: pointer;
 
   .bar {
     width: 100%;
@@ -39,9 +40,11 @@
     &:first-child {
       transform: translateY(0.8rem) rotate(45deg);
     }
+
     &:nth-child(2) {
       opacity: 0;
     }
+
     &:last-child {
       transform: translateY(-0.8rem) rotate(-45deg);
     }
