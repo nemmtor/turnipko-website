@@ -1,15 +1,38 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Gallery from '../components/gallery/gallery';
+import getImagesFromQuery from '../utils/getImagesFromQuery';
 
-const IndexPage = ({ data }) => {
-  const images = data.allGraphCmsImage.nodes.map(({ description, id, img }) => {
-    const { fixed } = img.localFile.childImageSharp;
-    return { description, id, fixed };
-  });
+const IndexPage = () => {
+  const { allGraphCmsImage } = useStaticQuery(
+    graphql`
+        query {
+            allGraphCmsImage(limit: 3, sort: {fields: [createdAt], order: [DESC]}) {
+                edges {
+                    node {
+                        createdAt
+                        description
+                        id
+                        img {
+                            localFile {
+                                childImageSharp {
+                                    fixed(width:280) {
+                                        ...GatsbyImageSharpFixed_withWebp
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  );
+
+  const images = getImagesFromQuery(allGraphCmsImage);
 
   return (
     <Layout
@@ -40,27 +63,5 @@ const IndexPage = ({ data }) => {
     </Layout>
   );
 };
-
-export const query = graphql`
-  query getTop3Images {
-    allGraphCmsImage(limit: 3, sort: { fields: createdAt, order: DESC }) {
-      nodes {
-        createdAt
-        description
-        id
-        img {
-          localFile {
-            relativePath
-            childImageSharp {
-              fixed(width: 280) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default IndexPage;

@@ -15,11 +15,13 @@ const Gallery = ({ images }) => (
 Gallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      fixed: PropTypes.shape({}).isRequired,
+      fixed: PropTypes.shape({}),
+      fluid: PropTypes.shape({}),
       id: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
     }),
-  ),
+  ).isRequired,
 };
 
 export default Gallery;
