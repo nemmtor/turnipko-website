@@ -1000,7 +1000,7 @@ type TURNIPKO {
     imageCategoryVersion(where: TURNIPKO_VersionWhereInput!): TURNIPKO_DocumentVersion
     "Retrieve document version"
     imageVersion(where: TURNIPKO_VersionWhereInput!): TURNIPKO_DocumentVersion
-    "Retrieve multiple images"
+    "Retrieve multiple assets"
     images(
         after: String,
         before: String,
@@ -1021,7 +1021,7 @@ type TURNIPKO {
         stage: TURNIPKO_Stage! = PUBLISHED,
         where: TURNIPKO_ImageWhereInput
     ): [TURNIPKO_Image!]!
-    "Retrieve multiple images using the Relay connection interface"
+    "Retrieve multiple assets using the Relay connection interface"
     imagesConnection(
         after: String,
         before: String,

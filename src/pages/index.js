@@ -10,7 +10,7 @@ const IndexPage = () => {
   const queryResult = useStaticQuery(
     graphql`
         query {
-            mobile: allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
+            mobile: allGraphCmsImage(limit:5, sort: {fields: [createdAt], order: [DESC]}) {
                 nodes {
                     createdAt
                     description
@@ -26,7 +26,7 @@ const IndexPage = () => {
                     }
                 }
             }
-            desktop: allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
+            desktop: allGraphCmsImage(limit:5, sort: {fields: [createdAt], order: [DESC]}) {
                 nodes {
                     id
                     img {

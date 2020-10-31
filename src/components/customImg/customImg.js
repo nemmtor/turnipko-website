@@ -1,40 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './customImg.module.scss';
+import getSources from '../../utils/getSources';
 
-const CustomImg = ({ image }) => {
-  const { fluidMobile, fluidDesktop, description } = image;
-  // TODO: Probably needs to lift isfullscreen state up to gallery
-  const [isFullScreen, setIsFullScreen] = useState(false);
 
-  const handleClick = () => {
-    setIsFullScreen(prevState => !prevState);
-  };
+const CustomImg = ({ image, handleClick }) => {
+  const { description } = image;
+  const sources = getSources(image);
 
-  // TODO: fix enter hit
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
-      setIsFullScreen(prevState => !prevState);
+      handleClick(image);
     }
   };
 
-
-  const sources = [
-    fluidMobile,
-    {
-      ...fluidDesktop,
-      media: `(min-width: 768px)`,
-    },
-  ];
-
-
   return (
-    <div onClick={handleClick} onKeyDown={handleKeyDown} role="button" tabIndex={0}
-         className={`${styles.container} ${isFullScreen ? styles.full : ''}`}>
+    <div role="button" tabIndex={0} onClick={() => {
+      handleClick(image);
+    }}
+         onKeyDown={handleKeyDown}
+         className={styles.container}>
       <Img fluid={sources} fadeIn={true} alt={description}
-           className={`${styles.image} ${isFullScreen ? styles.imageFull : ''}`} />
+           className={styles.image} />
     </div>
   );
 };
@@ -47,6 +36,7 @@ CustomImg.propTypes = {
     id: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }),
+  handleClick: PropTypes.func.isRequired,
 };
 
 
