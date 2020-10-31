@@ -23,8 +23,8 @@ const Header = ({ headingText, subHeading, ctaText, ctaUrl }) => {
     bg.childImageSharp.fluid,
   ];
 
-  const handleCtaClick = e => {
-    navigate(ctaUrl);
+  const handleCtaClick = async () => {
+    await navigate(ctaUrl);
   };
 
   return (

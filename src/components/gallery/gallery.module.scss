@@ -10,4 +10,8 @@
 .image {
   width: 28rem;
   margin-bottom: $spacing-small;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

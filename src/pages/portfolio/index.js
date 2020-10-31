@@ -42,7 +42,8 @@ const Portfolio = () => {
       subHeading="Click on the picture to visit specific gallery"
     >
       <SEO title="Portfolio" />
-      <section className="section">
+      <section className="section section--centered">
+        <h2 className="section__title" >Choose gallery type</h2>
         {images.map(({ title, imgSrc, link }) => {
           const edge = allFile.edges.filter(
             edge => edge.node.relativePath === imgSrc,
