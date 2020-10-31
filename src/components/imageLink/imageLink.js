@@ -11,8 +11,8 @@ const ImageLink = ({ title, fluid, link }) => {
     fluid,
   ];
 
-  const handleClick = () => {
-    navigate(`/portfolio/${link}`);
+  const handleClick = async () => {
+    await navigate(`/portfolio/${link}`);
   };
 
   return (
