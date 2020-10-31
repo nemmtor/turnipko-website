@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "turnipko-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Turnipko photography website",
+  "version": "1.0.0",
+  "author": "Kacper Witas <kacper0witas@gmail.com>",
   "dependencies": {
     "gatsby": "^2.24.83",
     "gatsby-background-image": "^1.1.2",
@@ -33,18 +33,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "dev": "gatsby develop",
+    "clean": "gatsby clean"
   }
 }

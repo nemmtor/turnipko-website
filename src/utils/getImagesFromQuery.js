@@ -1,9 +1,7 @@
 const getImagesFromQuery = (queryResult) => {
-  return queryResult.edges.map(({ node }) => {
-    const { createdAt, description, id, img } = node;
-    const { childImageSharp } = img.localFile;
-    const image = childImageSharp.fixed || childImageSharp.fluid;
-    return { createdAt, description, id, image };
+  return queryResult.nodes.map(({ createdAt, description, id, img }) => {
+    const { fluid } = img.localFile.childImageSharp;
+    return { createdAt, description, id, fluid };
   });
 };
 

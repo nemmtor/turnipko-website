@@ -10,18 +10,16 @@ const IndexPage = () => {
   const { allGraphCmsImage } = useStaticQuery(
     graphql`
         query {
-            allGraphCmsImage(limit: 3, sort: {fields: [createdAt], order: [DESC]}) {
-                edges {
-                    node {
-                        createdAt
-                        description
-                        id
-                        img {
-                            localFile {
-                                childImageSharp {
-                                    fixed(width:280) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
+            allGraphCmsImage(limit:3, sort: {fields: [createdAt], order: [DESC]}) {
+                nodes {
+                    createdAt
+                    description
+                    id
+                    img {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 1920, quality: 100, webpQuality: 100) {
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }

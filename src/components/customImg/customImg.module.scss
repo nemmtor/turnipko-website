@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.container {
+  margin-bottom: $spacing-small;
+}
+
+.image {
+  width: 28rem;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: 'Toggle fullscreen';
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    transform-origin: center center;
+    transition: transform 0.5s ease, opacity 0.5s 0.1s ease;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.full {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .5)
+}
+
+.imageFull {
+  width: 100%;
+
+  &::after {
+    content: none;
+  }
+}
+
