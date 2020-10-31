@@ -12,14 +12,15 @@ const CustomImg = ({ fluid, description }) => {
   };
 
   // TODO: fix enter hit
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       setIsFullScreen(prevState => !prevState);
     }
   };
   // TODO: Probably needs to lift isfullscreen state up to gallery
   return (
-    <div onClick={handleClick} onKeyPress={handleKeyPress} role="button" tabIndex={0} className={`${styles.container} ${isFullScreen ? styles.full : ''}`}>
+    <div onClick={handleClick} onKeyDown={handleKeyDown} role="button" tabIndex={0}
+         className={`${styles.container} ${isFullScreen ? styles.full : ''}`}>
       <Img fluid={fluid} fadeIn={true} alt={description}
            className={`${styles.image} ${isFullScreen ? styles.imageFull : ''}`} />
     </div>
