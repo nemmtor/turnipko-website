@@ -871,10 +871,13 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Asset` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
+        Note that `Asset` will be affected directly by this argument, as well as any
+        other related models with localized fields in the query's subtree.
         The first locale matching the provided list will be returned, entries with non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         stage: TURNIPKO_Stage! = PUBLISHED,
@@ -892,10 +895,13 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Asset` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
+        Note that `Asset` will be affected directly by this argument, as well as any
+        other related models with localized fields in the query's subtree.
         The first locale matching the provided list will be returned, entries with non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_AssetOrderByInput,
@@ -913,10 +919,13 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Asset` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
+        Note that `Asset` will be affected directly by this argument, as well as any
+        other related models with localized fields in the query's subtree.
         The first locale matching the provided list will be returned, entries with non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_AssetOrderByInput,
@@ -930,10 +939,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Image` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `Image` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         stage: TURNIPKO_Stage! = PUBLISHED,
@@ -949,10 +964,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `ImageCategory` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `ImageCategory` is a model without localized fields and will not
+        be affected directly by this argument, however the locales will be passed on
+        to any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_ImageCategoryOrderByInput,
@@ -970,10 +991,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `ImageCategory` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `ImageCategory` is a model without localized fields and will not
+        be affected directly by this argument, however the locales will be passed on
+        to any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_ImageCategoryOrderByInput,
@@ -987,10 +1014,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `ImageCategory` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `ImageCategory` is a model without localized fields and will not
+        be affected directly by this argument, however the locales will be passed on
+        to any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         stage: TURNIPKO_Stage! = PUBLISHED,
@@ -1000,7 +1033,7 @@ type TURNIPKO {
     imageCategoryVersion(where: TURNIPKO_VersionWhereInput!): TURNIPKO_DocumentVersion
     "Retrieve document version"
     imageVersion(where: TURNIPKO_VersionWhereInput!): TURNIPKO_DocumentVersion
-    "Retrieve multiple assets"
+    "Retrieve multiple images"
     images(
         after: String,
         before: String,
@@ -1010,10 +1043,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Image` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `Image` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_ImageOrderByInput,
@@ -1021,7 +1060,7 @@ type TURNIPKO {
         stage: TURNIPKO_Stage! = PUBLISHED,
         where: TURNIPKO_ImageWhereInput
     ): [TURNIPKO_Image!]!
-    "Retrieve multiple assets using the Relay connection interface"
+    "Retrieve multiple images using the Relay connection interface"
     imagesConnection(
         after: String,
         before: String,
@@ -1031,10 +1070,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Image` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `Image` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         orderBy: TURNIPKO_ImageOrderByInput,
@@ -1050,10 +1095,16 @@ type TURNIPKO {
 
         Defines which locales should be returned.
 
-        Note that `Node` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `Node` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
-        This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
+        This argument may be overwritten by another locales definition in a
+        relational child field, this will effectively use the overwritten argument
+        for the affected query's subtree.
         """
         locales: [TURNIPKO_Locale!]! = [en],
         stage: TURNIPKO_Stage! = PUBLISHED
@@ -1068,7 +1119,11 @@ type TURNIPKO_Aggregate {
 type TURNIPKO_Asset implements TURNIPKO_Node {
     "The time the document was created"
     createdAt(
-        "Variation of DateTime field to return, allows value from base document, current localization, or combined by returning the newer value of both"
+        """
+
+        Variation of DateTime field to return, allows value from base document,
+        current localization, or combined by returning the newer value of both
+        """
         variation: TURNIPKO_SystemDateTimeFieldVariation! = COMBINED
     ): TURNIPKO_DateTime!
     "Get the document in other stages"
@@ -1104,8 +1159,12 @@ type TURNIPKO_Asset implements TURNIPKO_Node {
 
         Allows to optionally override locale filtering behaviour in the query's subtree.
 
-        Note that `imageImg` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `imageImg` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
         This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
         """
@@ -1127,7 +1186,11 @@ type TURNIPKO_Asset implements TURNIPKO_Node {
     mimeType: String
     "The time the document was published. Null on documents in draft stage."
     publishedAt(
-        "Variation of DateTime field to return, allows value from base document, current localization, or combined by returning the newer value of both"
+        """
+
+        Variation of DateTime field to return, allows value from base document,
+        current localization, or combined by returning the newer value of both
+        """
         variation: TURNIPKO_SystemDateTimeFieldVariation! = COMBINED
     ): TURNIPKO_DateTime
     "The file size"
@@ -1136,7 +1199,11 @@ type TURNIPKO_Asset implements TURNIPKO_Node {
     stage: TURNIPKO_Stage!
     "The time the document was updated"
     updatedAt(
-        "Variation of DateTime field to return, allows value from base document, current localization, or combined by returning the newer value of both"
+        """
+
+        Variation of DateTime field to return, allows value from base document,
+        current localization, or combined by returning the newer value of both
+        """
         variation: TURNIPKO_SystemDateTimeFieldVariation! = COMBINED
     ): TURNIPKO_DateTime!
     "Get the url for the asset with provided transformations applied."
@@ -1188,8 +1255,12 @@ type TURNIPKO_Image implements TURNIPKO_Node {
 
         Allows to optionally override locale filtering behaviour in the query's subtree.
 
-        Note that `category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `category` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
         This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
         """
@@ -1221,8 +1292,12 @@ type TURNIPKO_Image implements TURNIPKO_Node {
 
         Allows to optionally override locale filtering behaviour in the query's subtree.
 
-        Note that `img` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `img` is a model without localized fields and will not be affected
+        directly by this argument, however the locales will be passed on to any
+        relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
         This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
         """
@@ -1266,8 +1341,12 @@ type TURNIPKO_ImageCategory implements TURNIPKO_Node {
 
         Allows to optionally override locale filtering behaviour in the query's subtree.
 
-        Note that `image` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-        For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+        Note that `image` is a model without localized fields and will not be
+        affected directly by this argument, however the locales will be passed on to
+        any relational fields in the query's subtree for filtering.
+        For related models with localized fields in the query's subtree, the first
+        locale matching the provided list of locales will be returned, entries with
+        non matching locales will be filtered out.
 
         This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
         """
@@ -3533,11 +3612,24 @@ enum TURNIPKO_ImageCategoryOrderByInput {
 enum TURNIPKO_ImageFit {
     "Resizes the image to fit within the specified parameters without distorting, cropping, or changing the aspect ratio."
     clip
-    "Resizes the image to fit the specified parameters exactly by removing any parts of the image that don't fit within the boundaries."
+    """
+
+    Resizes the image to fit the specified parameters exactly by removing any
+    parts of the image that don't fit within the boundaries.
+    """
     crop
-    "Resizes the image to fit within the parameters, but as opposed to 'fit:clip' will not scale the image if the image is smaller than the output size."
+    """
+
+    Resizes the image to fit within the parameters, but as opposed to 'fit:clip'
+    will not scale the image if the image is smaller than the output size.
+    """
     max
-    "Resizes the image to fit the specified parameters exactly by scaling the image to the desired size. The aspect ratio of the image is not respected and the image can be distorted using this method."
+    """
+
+    Resizes the image to fit the specified parameters exactly by scaling the image
+    to the desired size. The aspect ratio of the image is not respected and the
+    image can be distorted using this method.
+    """
     scale
 }
 
@@ -5350,13 +5442,20 @@ scalar Date
 "The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
 scalar JSON
 
-"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the date-timeformat outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representationof dates and times using the Gregorian calendar."
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+date-timeformat outlined in section 5.6 of the RFC 3339 profile of the ISO 8601
+standard for representationof dates and times using the Gregorian calendar.
+"""
 scalar TURNIPKO_DateTime
 
 "Raw JSON value"
 scalar TURNIPKO_Json
 
-"The Long scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1."
+"""
+The Long scalar type represents non-fractional signed whole numeric values. Long
+can represent values between -(2^63) and 2^63 - 1.
+"""
 scalar TURNIPKO_Long
 
 scalar TURNIPKO_Hex
@@ -5365,8 +5464,11 @@ scalar TURNIPKO_RGBAHue
 
 scalar TURNIPKO_RGBATransparency
 
+"""
+A date string, such as 2007-12-03 (YYYY-MM-DD), compliant with ISO 8601 standard
+for representation of dates using the Gregorian calendar.
+"""
+scalar TURNIPKO_Date
+
 "Slate-compatible RichText AST"
 scalar TURNIPKO_RichTextAST
-
-"A date string, such as 2007-12-03 (YYYY-MM-DD), compliant with ISO 8601 standard for representation of dates using the Gregorian calendar."
-scalar TURNIPKO_Date

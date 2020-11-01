@@ -5,9 +5,11 @@ import styles from './gallery.module.scss';
 import CustomImg from '../customImg/customImg';
 import FullScreenImage from '../fullScreenImage/fullScreenImage';
 
+// TODO: move handleNext, prev and close to reducer, than reducer goes to throttle
 const Gallery = ({ images }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
+
 
   const handleClick = (image) => {
     const index = images.indexOf(image);
