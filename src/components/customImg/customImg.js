@@ -6,20 +6,22 @@ import styles from './customImg.module.scss';
 import getSources from '../../utils/getSources';
 
 
-const CustomImg = ({ image, handleClick }) => {
+const CustomImg = ({ image, handleOpen }) => {
   const { description } = image;
   const sources = getSources(image);
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
-      handleClick(image);
+      handleOpen(image.id);
     }
   };
 
+  const handleClick = () => {
+    handleOpen(image.id);
+  };
+
   return (
-    <div role="button" tabIndex={0} onClick={() => {
-      handleClick(image);
-    }}
+    <div role="button" tabIndex={0} onClick={handleClick}
          onKeyDown={handleKeyDown}
          className={styles.container}>
       <Img fluid={sources} fadeIn={true} alt={description}
@@ -36,7 +38,7 @@ CustomImg.propTypes = {
     id: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }),
-  handleClick: PropTypes.func.isRequired,
+  handleOpen: PropTypes.func.isRequired,
 };
 
 
