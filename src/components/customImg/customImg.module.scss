@@ -2,15 +2,19 @@
 
 .container {
   margin-bottom: $spacing-small;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
 }
 
 .image {
+  height: 20rem;
   width: 28rem;
   cursor: pointer;
   position: relative;
 
   &::after {
-    content: 'Toggle fullscreen';
+    content: 'Fullscreen';
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
     color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
@@ -21,14 +25,11 @@
     background: rgba(0, 0, 0, .5);
     height: 100%;
     width: 100%;
-    transform-origin: center center;
-    transition: transform 0.5s ease, opacity 0.5s 0.1s ease;
-    transform: scale(0);
     opacity: 0;
   }
 
   &:hover::after {
-    transform: scale(1);
+    transition: opacity 0.2s ease;
     opacity: 1;
   }
 }

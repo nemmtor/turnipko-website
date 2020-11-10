@@ -13,9 +13,9 @@ const Burger = ({ toggleNav, isOpen }) => (
     aria-label="Open navigation"
     onClick={toggleNav}
   >
-    <div className={styles.bar}></div>
-    <div className={styles.bar}></div>
-    <div className={styles.bar}></div>
+    <div className={styles.bar}/>
+    <div className={styles.bar}/>
+    <div className={styles.bar}/>
   </button>
 );
 

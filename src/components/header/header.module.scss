@@ -1,29 +1,29 @@
 @import '../../styles/variables.scss';
-@import '../../styles/common/paddings.scss';
 
 .header {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 30rem;
+  height: 20rem;
   font-size: 1.6rem;
-  color: $dark;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .heading {
+  position: absolute;
+  left: 2rem;
+  bottom: 3rem;
+  text-transform: capitalize;
+
+  font-family: 'Dancing Script', cursive;
   line-height: 1;
+  font-weight: 300;
+  font-size: 2.25em;
+  color: $dark;
+
   margin: 0;
-  text-transform: uppercase;
-  font-weight: bold;
+  max-width: 16.5rem;
+  opacity: .6;
 }
 
-.subHeading {
-  opacity: 0.5;
-  margin-bottom: 2rem;
-}
+

@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Gallery from '../components/gallery/gallery';
+import Gallery from '../components/gallery';
 import getImagesFromQuery from '../utils/getImagesFromQuery';
 
 const IndexPage = () => {
@@ -40,21 +41,26 @@ const IndexPage = () => {
                     }
                 }
             }
+            sectionBg: file(relativePath: {eq:"gallerybg.png"}){
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
     `,
   );
 
   const images = getImagesFromQuery(queryResult);
+  const {sectionBg} = queryResult;
 
   return (
     <Layout
-      headingText="Turnipko"
-      subHeading="Beautiful pictures of your baby"
-      ctaText="Contact me"
-      ctaUrl="/contact"
+      headingText="Baby photography"
     >
       <SEO title="Home" />
-      <section className="section">
+      <BackgroundImage className="section" Tag={"section"} fluid={sectionBg.childImageSharp.fluid}>
         <h2 className="section__title">Last images</h2>
         <Gallery images={images} />
         <div className="flex-center-column">
@@ -71,7 +77,7 @@ const IndexPage = () => {
             Checkout gallery
           </Link>
         </div>
-      </section>
+      </BackgroundImage>
     </Layout>
   );
 };

@@ -6,15 +6,12 @@ import Footer from '../footer/footer';
 import Header from '../header/header';
 import Nav from '../nav/nav';
 
-const Layout = ({ children, headingText, subHeading, ctaText, ctaUrl }) => {
+const Layout = ({ children, headingText}) => {
   return (
     <>
       <Nav />
       <Header
         headingText={headingText}
-        subHeading={subHeading}
-        ctaText={ctaText}
-        ctaUrl={ctaUrl}
       />
       <main>{children}</main>
       <Footer />
@@ -25,14 +22,7 @@ const Layout = ({ children, headingText, subHeading, ctaText, ctaUrl }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   headingText: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
-  ctaText: PropTypes.string,
-  ctaUrl: PropTypes.string,
 };
 
-Layout.defaultProps = {
-  ctaText: '',
-  ctaUrl: '',
-};
 
 export default Layout;

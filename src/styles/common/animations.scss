@@ -6,3 +6,16 @@
     opacity: 1;
   }
 }
+
+@mixin fadeInFrom($fromOpacity) {
+  @keyframes fadeInFrom {
+    from {
+      opacity: $fromOpacity;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: fadeInFrom 0.5s ease forwards;
+}
