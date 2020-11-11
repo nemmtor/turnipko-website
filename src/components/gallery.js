@@ -10,7 +10,8 @@ const Gallery = ({ images }) => {
   const [image, setImage] = useState(null);
 
 
-  const handleClick = (image) => {
+  const handleClick = (image=null) => {
+    console.log()
     setIsFullScreen(prevState => !prevState);
     setImage(image);
   };
@@ -20,9 +21,7 @@ const Gallery = ({ images }) => {
       {images.map((image) => (
         <CustomImg image={image} key={image.id} handleClick={handleClick} />
       ))}
-      {isFullScreen && <FullScreenImage image={image} close={() => {
-        setIsFullScreen(false);
-      }}
+      {isFullScreen && <FullScreenImage image={image} close={handleClick}
       />}
     </div>);
 };
