@@ -10,6 +10,7 @@
   width: 28rem;
   cursor: pointer;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 
   &::after {
     content: 'Fullscreen';

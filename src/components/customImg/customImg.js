@@ -1,12 +1,13 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import styles from './customImg.module.scss';
 import getSources from '../../utils/getSources';
 
 
-const CustomImg = ({ image, handleClick }) => {
+const CustomImg = ({ image, handleClick, openFullScreen }) => {
   const { description } = image;
   const sources = getSources(image);
 
@@ -19,6 +20,8 @@ const CustomImg = ({ image, handleClick }) => {
   return (
     <div role="button" tabIndex={0} onClick={() => {
       handleClick(image);
+      openFullScreen();
+      document.querySelector('body').classList.add('no-scroll');
     }}
          onKeyDown={handleKeyDown}
          className={styles.container}>
@@ -39,5 +42,9 @@ CustomImg.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
+const mapDispatchToProps = dispatch => {
+  return { openFullScreen: () => dispatch({ type: 'OPEN' }) };
+};
 
-export default CustomImg;
+
+export default connect(null, mapDispatchToProps)(CustomImg);

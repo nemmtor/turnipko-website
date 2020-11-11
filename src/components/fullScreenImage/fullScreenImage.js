@@ -1,19 +1,25 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import styles from './fullScreenImage.module.scss';
 import getSources from '../../utils/getSources';
 
 // TODO: Close with escape
-const FullScreenImage = ({ image, close }) => {
+// TODO: Add navigation with arrows + keyboard nav
+const FullScreenImage = ({ image, closeFullScreen }) => {
   const sources = getSources(image);
 
 
   return <div className={styles.container} role="none">
-      <Img fluid={sources} alt={image.description} className={styles.image} />
+    <Img fluid={sources} alt={image.description} className={styles.image} />
 
-    <button className={styles.close} onClick={close}>
+    <button className={styles.close} onClick={(e) => {
+      e.stopPropagation();
+      closeFullScreen();
+      document.querySelector('body').classList.remove('no-scroll');
+    }}>
       Close
     </button>
   </div>;
@@ -21,7 +27,11 @@ const FullScreenImage = ({ image, close }) => {
 
 FullScreenImage.propTypes = {
   image: PropTypes.shape({}).isRequired,
-  close: PropTypes.func.isRequired,
+  closeFullScreen: PropTypes.func.isRequired,
 };
 
-export default FullScreenImage;
+const mapDispatchToProps = dispatch => ({
+  closeFullScreen: () => dispatch({ type: 'CLOSE' }),
+})
+
+export default connect(null, mapDispatchToProps)(FullScreenImage);

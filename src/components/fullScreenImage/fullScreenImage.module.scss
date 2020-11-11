@@ -18,12 +18,12 @@
 .image {
   width: 100%;
   opacity: 0;
-  @include fadeInFrom(1);
+  @include fadeInFrom(0);
 }
 
 .close {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   right: 50%;
   transform: translateX(50%);
 
@@ -33,12 +33,14 @@
 
   background: $dark;
   color: $main;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
   border: none;
   font-weight: bold;
   z-index: 1000000;
+  box-shadow: 0 0 4px 1px $main;
 
   transition: filter 0.2s linear;
 

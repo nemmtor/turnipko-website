@@ -21,6 +21,10 @@ body {
   padding-top: $mobile-nav-height;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .cta {
   padding: 1rem 1.5rem;
   background: none;
@@ -36,8 +40,8 @@ body {
 
   &__title {
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: $spacing-mid;
-    letter-spacing: 0.15em;
+    opacity: 0.75;
+    text-transform: capitalize;
   }
 }

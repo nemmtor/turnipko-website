@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './nav.module.scss';
 import Burger from '../burger/burger';
 import NavMenu from '../navMenu/navMenu';
 import Logo from '../logo';
 
-// TODO: Make state isFullScreen => isFullScreen ? display: none on nav!
-const Nav = () => {
+const Nav = ({isFullScreen}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNav = () => {
     setIsOpen(prevState => !prevState);
   };
+
+  if(isFullScreen) return null;
 
   return (
     <nav className={styles.nav}>
@@ -21,4 +24,10 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+Nav.propTypes = {
+  isFullScreen: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = ({ isFullScreen }) => ({ isFullScreen });
+
+export default connect(mapStateToProps)(Nav);
